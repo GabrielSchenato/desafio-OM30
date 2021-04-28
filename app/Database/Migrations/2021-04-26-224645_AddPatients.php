@@ -58,7 +58,7 @@ class AddPatients extends Migration
 			'complement' => [
 				'type' => 'VARCHAR',
 				'constraint' => '255',
-				'null' => false
+				'null' => true
 			],
 			'district' => [
 				'type' => 'VARCHAR',
