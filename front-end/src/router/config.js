@@ -52,6 +52,7 @@ export const protectedRoute = [
       title: 'Home',
       icon: '',
     },
+    redirect: 'auth',
     children: [
       {
         path: '/patients',
