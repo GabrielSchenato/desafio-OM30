@@ -2,7 +2,7 @@
 
 ## Tecnologias
 * Back-end (CodeIgniter 4, PostgreSQL e Docker)
-* Front-end (Vuejs e Docker)
+* Front-end (VueJS e Docker)
 
 Para executar o projeto:
 
