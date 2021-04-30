@@ -61,11 +61,11 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $filters = [
-		'auth' => [
-			'before' => [
-				'patients/*',
-				'patients'
-			],
-		]
+		// 'auth' => [
+		// 	'before' => [
+		// 		'patients/*',
+		// 		'patients'
+		// 	],
+		// ]
 	];
 }

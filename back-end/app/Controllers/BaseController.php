@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\CodeIgniterCORS\CodeIgniterCORS;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
@@ -48,6 +49,10 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+
+		if (!is_cli()) {
+			$this->cors();
+		}
 	}
 
 	public function getResponse(
@@ -85,5 +90,18 @@ class BaseController extends Controller
 			$rules = $validation->$rules;
 		}
 		return $this->validator->setRules($rules, $messages)->run($input);
+	}
+
+	public function cors()
+	{
+		$this->response
+			->setHeader('Access-Control-Allow-Methods', '*')
+			->setHeader(
+				'Access-Control-Allow-Headers',
+				'*'
+			)
+			->setHeader('Access-Control-Max-Age', '3600')
+			->setHeader('Access-Control-Allow-Origin', '*')
+			->setHeader('Access-Control-Allow-Credentials', 'true');
 	}
 }

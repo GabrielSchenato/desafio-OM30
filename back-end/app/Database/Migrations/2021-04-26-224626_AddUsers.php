@@ -2,6 +2,7 @@
 
 namespace App\Database\Migrations;
 
+use App\Models\User;
 use CodeIgniter\Database\Migration;
 
 class AddUsers extends Migration
@@ -39,6 +40,13 @@ class AddUsers extends Migration
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->createTable('users');
+
+        $user = new User();
+        $user->save([
+            'name' => 'User Test',
+            'email' => 'test@test.com',
+            'password' => '12345678'
+        ]);
     }
 
     public function down()

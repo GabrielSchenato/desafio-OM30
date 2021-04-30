@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  node:
+    image: 'node:14.1.0-alpine3.10'
+    container_name: om30-node
+    working_dir: /www/
+    volumes:
+      - ../:/www/
+    command: sh -c "npm install && npm update && npm run serve"
+    ports:
+      - '8080:8080'

@@ -33,8 +33,8 @@ class Patients extends BaseController
             'name' => 'required',
             'mothers_name' => 'required',
             'birthday' => 'required',
-            'cpf' => 'required',
-            'cns' => 'required',
+            'cpf' => 'required|is_unique[patients.cpf]',
+            'cns' => 'required|is_unique[patients.cns]',
         ];
 
         $input = $this->getRequestInput($this->request);
@@ -120,10 +120,8 @@ class Patients extends BaseController
     public function destroy($id)
     {
         try {
-
             $model = new Patient();
-            $patient = $model->findPatientById($id);
-            $model->delete($patient);
+            $model->delete($id);
 
             return $this
                 ->getResponse(

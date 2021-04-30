@@ -1,0 +1,22 @@
+module.exports = {
+  root: true,
+
+  env: {
+    node: true,
+  },
+  extends: ['plugin:vue/essential', 'plugin:vue/recommended', '@vue/prettier'],
+  rules: {
+    'no-console': 'off',
+    'no-debugger': 'off',
+    'no-unused-vars': 1,
+    'vue/max-attributes-per-line': 'off',
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/valid-v-slot': ['error', {
+      allowModifiers: true,
+    }],
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
+}

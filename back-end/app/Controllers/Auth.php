@@ -83,6 +83,7 @@ class Auth extends BaseController
 
             helper('jwt');
 
+            $this->response->setHeader('Authorization', getSignedJWTForUser($emailAddress));
             return $this
                 ->getResponse(
                     [

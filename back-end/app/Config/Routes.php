@@ -61,3 +61,6 @@ $routes->post('patients', 'Patients::store');
 $routes->get('patients/(:num)', 'Patients::show/$1');
 $routes->put('patients/(:num)', 'Patients::update/$1');
 $routes->delete('patients/(:num)', 'Patients::destroy/$1');
+
+
+$routes->options('(:any)', 'BaseController::cors');
