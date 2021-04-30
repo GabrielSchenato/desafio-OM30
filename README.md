@@ -54,8 +54,8 @@ Para executar o projeto:
 > docker logs -f om30-node
 
 15. Voltar na pasta raiz do projeto e dar as permissões necessárias
-> sudo chown ${USER}:www-data -R .
-> sudo chmod 775 -R .
+####  sudo chown ${USER}:www-data -R .
+####  sudo chmod 775 -R .
 
 16. Acessar a URL
 
